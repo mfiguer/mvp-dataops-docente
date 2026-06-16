@@ -34,7 +34,7 @@ def db_health():
     return test_connection()
 
 @app.get("/postulaciones-demo")
-def postulaciones_demo(limit: int = Query(default=20, ge=1, le=100)):
+def postulaciones_demo(limit: int = Query(default=20, ge=1)):
     try:
         data = get_postulaciones(limit=limit)
         return {
